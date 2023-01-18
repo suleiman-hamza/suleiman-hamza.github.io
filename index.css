@@ -5,9 +5,14 @@
     --svg-fill-dark: var(--toggle-bg-light);
     --toggle-circle-light: rgb(230, 138, 46);
     --toggle-circle-dark: var(--primary-clr);
-    --white: #fff;
     --transition: all 300ms ease-in-out;
+
+
+    --white: #fff;
     --secondary-clr: rgb(235, 232, 57);
+    --primary-clr: #4364f7;
+    --background-clr: #fff;
+    --text-clr: #0d1225;
 }
 :root {
     color-scheme: light;
