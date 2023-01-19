@@ -3,7 +3,7 @@ const switchTheme = () => {
     let colorScheme = rootElem.getAttribute('color-scheme'),
     newTheme = (colorScheme === 'light') ? 'dark' : 'light';
 
-    rootElem.setAttribute('colorScheme', newTheme)
+    rootElem.setAttribute('color-scheme', newTheme)
 }
 
 
