@@ -185,11 +185,11 @@ h1, h2, h3, p {
     line-height: 1;
     position: relative;
     z-index: 2;
+    margin-bottom: 3.5rem;
 }
 
 .role {
     font-size: 1.2rem;
-    margin-bottom: 3.5rem;
     font-weight: 200;
     display: block;
 }
