@@ -8,7 +8,7 @@
     --transition: all 300ms ease-in-out;
 
     --grey: #C4C0D8;
-    --white: #fff;
+    --white: rgba(216, 213, 213, 0.733);
 
     --dark-yellow: #e8e540;
     --dark-primary: #617efe;
@@ -26,9 +26,13 @@
     color-scheme: light;
     --primary-clr: var(--light-primary);
     --secondary-clr: var(--light-yellow);
-    --background-clr: var(--dark-text1);
+    --background-clr: var(--white);
+    --scroll-bg-clr: var(--dark-navy);
+    --scroll-clr: var(--white);
     --text-clr: var(--light-text1);
     --highlight-text: var(--light-text2);
+    --icon-clr: var(--primary-clr);
+    --name: var(--light-text1);
     --svg-grey-fill: var(--svg-fill-light);
     --toggle-bg: var(--toggle-bg-light);
     --toggle-circle: var(--toggle-circle-light);
@@ -41,6 +45,10 @@
         --background-clr: var(--dark-navy);
         --text-clr: var(--dark-text1);
         --highlight-text: var(--dark-text2);
+        --scroll-bg-clr: var(--white);
+        --scroll-clr: var(--background-clr);
+        --icon-clr: var(--dark-text1);
+        --name: var(--light-primary);
         --svg-grey-fill: var(--svg-fill-dark);
         --toggle-bg: var(--toggle-bg-dark);--toggle-bg: var(--toggle-bg-dark);
         --toggle-circle: var(--toggle-circle-dark);
@@ -50,9 +58,13 @@
 [color-scheme="light"]{
     color-scheme: light;
     --primary-clr: var(--light-primary);
-    --background-clr: var(--dark-text1);
+    --background-clr: var(--white);
     --text-clr: var(--light-text1);
     --highlight-text: var(--light-text2);
+    --scroll-clr: var(--white);
+    --scroll-bg-clr: var(--dark-navy);
+    --icon-clr: var(--primary-clr);
+    --name: var(--light-text1);
     --svg-grey-fill: var(--svg-fill-light);
     --toggle-bg: var(--toggle-bg-light);
     --toggle-circle: var(--toggle-circle-light);
@@ -63,16 +75,20 @@
 
 [color-scheme="dark"]{
     color-scheme: dark;
-        --primary-clr: var(--dark-primary);
-        --background-clr: var(--dark-navy);
-        --text-clr: var(--dark-text1);
-        --highlight-text: var(--dark-text2);
-        --svg-grey-fill: var(--svg-fill-dark);
-        --toggle-bg: var(--toggle-bg-dark);--toggle-bg: var(--toggle-bg-dark);
-        --toggle-circle: var(--toggle-circle-dark);
-        --svg-grey-fill: rgb(134, 129, 124);
-        --toggle-bg: var(--toggle-bg-dark);
-        --toggle-circle: var(--toggle-circle-dark);
+    --primary-clr: var(--dark-primary);
+    --background-clr: var(--dark-navy);
+    --text-clr: var(--dark-text1);
+    --highlight-text: var(--dark-text2);
+    --name: var(--light-primary);
+    --icon-clr: var(--dark-text1);
+    --scroll-bg-clr: var(--white);
+    --scroll-clr: var(--background-clr);
+    --svg-grey-fill: var(--svg-fill-dark);
+    --toggle-bg: var(--toggle-bg-dark);--toggle-bg: var(--toggle-bg-dark);
+    --toggle-circle: var(--toggle-circle-dark);
+    --svg-grey-fill: rgb(134, 129, 124);
+    --toggle-bg: var(--toggle-bg-dark);
+    --toggle-circle: var(--toggle-circle-dark);
 }
 
 html {
@@ -110,7 +126,7 @@ h1, h2, h3, p {
     text-decoration-color: var(--primary-clr);
     text-underline-offset: 2px;
     text-decoration-thickness: 2px;
-    color: var(--text-clr);
+    color: var(--primary-clr);
     transition: var(--transition);
 }
 
@@ -177,11 +193,12 @@ h1, h2, h3, p {
 
  #main {
     text-align: center;
+    padding: 2rem;
  }
 
 .name {
     font-size: 2rem;
-    color: var(--text-clr);
+    color: var(--name);
     line-height: 1;
     position: relative;
     z-index: 2;
@@ -189,6 +206,7 @@ h1, h2, h3, p {
 }
 
 .role {
+    color: var(--text-clr);
     font-size: 1.2rem;
     font-weight: 200;
     display: block;
@@ -203,14 +221,12 @@ h1, h2, h3, p {
 
 .cta {
     display: inline-flex;
-    flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
 }
 
     
 .cta a {
-    padding: 0.5rem 1rem;
     border-radius: 10px;
 }
 
@@ -223,6 +239,7 @@ h1, h2, h3, p {
 
 .stack p {
     margin-bottom: 1rem;
+    font-size: 1.2rem;
 }
 
 .stack ul li {
@@ -236,14 +253,6 @@ h1, h2, h3, p {
     fill: none;
     stroke: var(--primary-clr);
     width: 15px;
-}
-    
-.project-link {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    border: 2px solid var(--primary-clr);
 }
 
 .project-link:is(:hover, :focus) .arrow-fwd {
@@ -264,12 +273,9 @@ h1, h2, h3, p {
     height: 18px;
     transition: var(--transition);
 }
-.about-me{
-    line-height: 1.4;
-}
 
-.project {
-   
+.about-me{
+    line-height: 1.5;
 }
 
 .about-img-container {
@@ -357,11 +363,12 @@ h1, h2, h3, p {
 }
 
 .reach-out div{
-    border-radius: 10px;
     position: relative;
-    border: 2px solid var(--primary-clr);
+    background-color: hsla(229, 99%, 69%, 0.11);
     padding: 1rem;
     text-align: center;
+    border-radius: 10px;
+    border: 2px solid var(--primary-clr);
     overflow: hidden;
 }
 
@@ -391,9 +398,9 @@ h1, h2, h3, p {
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     display: inline-block;
-    border: 2px solid var(--secondary-clr);
+    border: 2px solid var(--primary-clr);
     border-radius: 10px;
-    color: var(--white);
+    color: var(--text-clr);
     transition: var(--transition);
  }
  .lets-talk:is(:hover, :focus) {
@@ -401,7 +408,6 @@ h1, h2, h3, p {
  }
 
  .grid-social {
-    border: 1px solid var(--primary-clr);
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -413,7 +419,7 @@ h1, h2, h3, p {
     height: 24px;
     display: block;
     padding: 0.5rem;
-    fill: #ccd6f6;
+    fill: var(--icon-clr);
     transition: 200ms ease-in-out;
  }
 
@@ -421,8 +427,34 @@ h1, h2, h3, p {
     fill: var(--primary-clr);
  }
 
- .sm-icon svg {
+ .sm-icon:active {
+    background-color: #6d7ba9;
  }
+
+ /*footer styles*/
+ .logo-type {
+    text-decoration: none;
+    color: var(--primary-clr);
+ }
+
+ .secondary-nav {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.85rem; 
+} 
+
+.secondary-nav li a{
+    color: var(--text-clr);  
+}
+
+.secondary-nav:active {
+    color: transparent;  
+}
+
+
 
  /*scroll to top button-positon fixed*/
 #scroll-to-top {
@@ -434,12 +466,12 @@ h1, h2, h3, p {
     outline: none;
     bottom: 20px;
     right: 20px;
-    background-color: var(--secondary-clr);
+    background-color: var(--scroll-bg-clr);
     cursor: pointer;
     z-index: 99;
 }
 
 .to-top {
     transform: rotate(180deg);
-    color: var(--primary-clr);
+    color: var(--scroll-clr);
 }
