@@ -511,6 +511,7 @@ h1, h2, h3, p {
     .logo-type {
         text-align: left;
         width: fit-content;
+        margin: 0;
     }
 
     .other-links {
