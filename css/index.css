@@ -97,6 +97,10 @@ html {
     scroll-behavior: smooth;
 }
 
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -154,10 +158,14 @@ h1, h2, h3, p {
 }
 
 .logo {
-    font-size: clamp(1.85rem, 4.5vw, 3rem);
-    line-height: 1;
-    color: var(--primary-clr);
+    width: 30px;
+    height: 30px;
+}
+
+.logo svg{
+    /* font-size: clamp(1.85rem, 4.5vw, 3rem); */
     text-decoration: none;
+    fill: var(--primary-clr);
 }
 .toggle {
     background-color: var(--toggle-bg);
@@ -193,7 +201,6 @@ h1, h2, h3, p {
  /*main*/
 
  #main {
-    padding: 2rem;
  }
 
 .name {
@@ -423,6 +430,9 @@ h1, h2, h3, p {
     text-decoration: none;
     color: var(--primary-clr);
     font-size: 1.5rem;
+    display: inline-block;
+    width: fit-content;
+    margin-inline: auto;
  }
 
  .other-links {
@@ -448,12 +458,16 @@ h1, h2, h3, p {
     height: 24px;
     display: block;
     padding: 0.5rem;
-    fill: var(--icon-clr);
+}
+
+.sm-icon svg {
+    fill: none;
+    stroke: var(--text-clr);
     transition: 200ms ease-in-out;
  }
 
- .sm-icon:is(:focus, :hover){
-    fill: var(--primary-clr);
+ .sm-icon svg:is(:focus, :hover){
+    stroke: var(--primary-clr);
  }
 
  .sm-icon:active {
@@ -496,6 +510,7 @@ h1, h2, h3, p {
 
     .logo-type {
         text-align: left;
+        width: fit-content;
     }
 
     .other-links {
