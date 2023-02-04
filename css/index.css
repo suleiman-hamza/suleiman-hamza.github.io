@@ -8,7 +8,7 @@
     --transition: all 300ms ease-in-out;
     --font-size-sm: 1rem;
 
-
+    --bolt-clr: #4364f760;
     --grey: #C4C0D8;
     --white: rgba(216, 213, 213, 0.733);
 
@@ -466,6 +466,15 @@ h1, h2, h3, p {
     text-align: center;
     padding-inline: auto;
     font-size: var(--font-size-sm);
+    background-image: url(/Icons/bolt.svg);
+    background-repeat: repeat;
+    background-size: 10px 10px;
+    background-origin: border-box;
+ }
+
+ .bolt {
+    fill: transparent;
+    stroke: var(--primary-clr);
  }
  .logo-type {
     text-decoration: none;
