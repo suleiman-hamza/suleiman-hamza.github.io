@@ -157,17 +157,18 @@ h1, h2, h3, p {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    margin-bottom: 3rem;
 }
 
 .logo {
-    width: 30px;
-    height: 30px;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--primary-clr);
+    padding: 0.4rem;
+    border: 2px solid var(--secondary-clr);
+    border-radius: 30%;
 }
 
 .logo svg{
-    /* font-size: clamp(1.85rem, 4.5vw, 3rem); */
-    text-decoration: none;
     fill: var(--primary-clr);
 }
 .toggle {
@@ -204,6 +205,8 @@ h1, h2, h3, p {
  /*main*/
 
  #main {
+    margin-top: 3rem;
+    height: 75vh;
  }
 
 .name {
@@ -230,15 +233,60 @@ h1, h2, h3, p {
     color: var(--text-clr);
 }
 
+.location {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 0.5rem;
+}
+
+.location .loader {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--secondary-clr);
+    border-radius: 50%;
+    position: relative;
+}
+
+.location p {
+    font-size: 1rem;
+}
+
+.loader::after {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    border: 2px solid var(--dark-primary);
+    inset: 0;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
 .cta {
     display: inline-flex;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
 }
-
     
 .cta a {
-    border-radius: 10px;
+     padding: 0.5rem;
+    border: 2px solid var(--dark-yellow);
+    /* border-radius: 10px; */
+    text-decoration: none;
+    color: var(--primary-clr);
+    transition :var(--transition);
+}
+
+.cta a:is(:focus, :hover) {
+    transform: translateY(5px);
 }
 
 .stack ul {
@@ -300,18 +348,6 @@ h1, h2, h3, p {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
     border-style: solid;
-}
-
-.project-link:is(:hover, :focus) .arrow-fwd {
-    transform: translateX(4px);
-}
-
-.hire-me {
-       /* text-decoration: none;
-       text-decoration-line: underline;
-       color: #fff;
-       text-underline-offset: 4px;
-        */
 }
 
 .arrow-fwd {
@@ -470,6 +506,7 @@ h1, h2, h3, p {
     background-repeat: repeat;
     background-size: 10px 10px;
     background-origin: border-box;
+    padding: 2rem;
  }
 
  .bolt {
@@ -541,9 +578,19 @@ h1, h2, h3, p {
     z-index: 99;
 }
 
+.copyright {
+    line-height: 1.5;
+}
+
 .to-top {
     transform: rotate(180deg);
     color: var(--scroll-clr);
+}
+
+.working {
+    font-size: 3rem;
+    color: white;
+    background-color: red;
 }
 
 @media (min-width: 48em) {
