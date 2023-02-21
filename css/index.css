@@ -34,8 +34,9 @@
     --text-clr: var(--light-text1);
     --highlight-text: var(--light-text2);
     --icon-clr: var(--primary-clr);
-    --name: var(--light-text1);
+    --name: var(--light-primary);
     --underline: var(--light-primary);
+    --border: var(--light-primary);
 
     --svg-grey-fill: var(--svg-fill-light);
     --toggle-bg: var(--toggle-bg-light);
@@ -54,6 +55,7 @@
         --icon-clr: var(--dark-text1);
         --name: var(--light-primary);
         --underline: var(--dark-yellow);
+        --border: var(--light-yellow);
 
         --svg-grey-fill: var(--svg-fill-dark);
         --toggle-bg: var(--toggle-bg-dark);--toggle-bg: var(--toggle-bg-dark);
@@ -70,8 +72,9 @@
     --scroll-clr: var(--white);
     --scroll-bg-clr: var(--dark-navy);
     --icon-clr: var(--primary-clr);
-    --name: var(--light-text1);
+    --name: var(--light-primary);
     --underline: var(--light-primary);
+    --border: var(--light-primary);
     --svg-grey-fill: var(--svg-fill-light);
     --toggle-bg: var(--toggle-bg-light);
     --toggle-circle: var(--toggle-circle-light);
@@ -91,6 +94,7 @@
     --scroll-bg-clr: var(--white);
     --scroll-clr: var(--background-clr);
     --underline: var(--dark-yellow);
+    --border: var(--light-yellow);
     --svg-grey-fill: var(--svg-fill-dark);
     --toggle-bg: var(--toggle-bg-dark);--toggle-bg: var(--toggle-bg-dark);
     --toggle-circle: var(--toggle-circle-dark);
@@ -163,8 +167,8 @@ h1, h2, h3, p {
     font-size: 2rem;
     text-decoration: none;
     color: var(--primary-clr);
-    padding: 0.4rem;
-    border: 2px solid var(--secondary-clr);
+    padding: 0.15rem 0.4rem;
+    border: 2px solid var(--border);
 }
 
 .logo svg{
@@ -272,21 +276,16 @@ h1, h2, h3, p {
 
 .cta {
     display: inline-flex;
-    gap: 1rem;
+    gap: 1.25rem;
     margin-bottom: 3.5rem;
 }
     
 .cta a {
-     padding: 0.5rem;
-    border: 2px solid var(--dark-yellow);
-    /* border-radius: 10px; */
+    padding: 0.5rem;
+    background-color: var(--light-text1);
+    color: #ccd6f6;
     text-decoration: none;
-    color: var(--primary-clr);
     transition :var(--transition);
-}
-
-.cta a:is(:focus, :hover) {
-    transform: translateY(5px);
 }
 
 .stack ul {
@@ -350,13 +349,6 @@ h1, h2, h3, p {
     border-style: solid;
 }
 
-.arrow-fwd {
-    display: block;
-    width: 18px;
-    height: 18px;
-    transition: var(--transition);
-}
-
 .about-me{
     line-height: 1.5;
 }
@@ -366,7 +358,7 @@ h1, h2, h3, p {
     width: 200px;
     height: 200px;
     margin-bottom: 2rem;
-    border: 2px solid var(--secondary-clr);
+    border: 2px solid var(--border);
 }
 
 .about-img {
@@ -381,9 +373,15 @@ h1, h2, h3, p {
  }
 
  .project-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+ }
+
+ .project-item {
     border: 1px solid white;
     padding: 1rem;
-    margin-bottom: 1.25rem;
  }
 
  .project-title {
