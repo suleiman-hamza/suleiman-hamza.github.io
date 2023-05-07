@@ -1,5 +1,5 @@
 const switchTheme = () => {
-    const rootElem = document.documentElement
+    const rootElem = document.documentElement;
     let colorScheme = rootElem.getAttribute('color-scheme'),
     newTheme = (colorScheme === 'light') ? 'dark' : 'light';
 
