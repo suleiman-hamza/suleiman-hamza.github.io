@@ -1,4 +1,9 @@
 * {
+
+    --fluid-type-min: 1.8rem;
+    --fluid-type-max: 3rem;
+    --fluid-type-target: 5vw;
+
     --toggle-bg-dark: rgb(6, 6, 30);
     --toggle-bg-light: #c4bbbb;
     --svg-fill-light: rgb(109, 107, 106);
@@ -164,17 +169,50 @@ h1, h2, h3, p {
     margin-bottom: 1.6rem;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 0;
-    margin-bottom: 3rem;
+.hero-section {
+    display: grid;
+    grid-template-columns: 2rem minmax(250px, 1400px) 2rem;
+    grid-template-rows: auto auto auto;
+    height: 100vh;
 }
 
-.profession {
-    font-size: 1rem;
+#main {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: center;
+ }
+
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2rem 0;
+    /* margin-bottom: 4rem; */
+}
+
+.name {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.profession, .fct {
+    font-size: 1.2rem;
     color: var(--dark-text2);
+    margin-bottom: 0.25rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.buttons hr {
+    border: none;
+    width: 2px;
+    height: 14px;
+    background-color: #0ACF83;
 }
 
 #logo {
@@ -189,44 +227,33 @@ h1, h2, h3, p {
 .toggle {
     background-color: var(--toggle-bg);
     border-radius: 50px;
-    width: 52px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     position: relative;
     cursor: pointer;
     border: 1px solid var(--dark-primary);
 }
 
-.toggle::after {
-    position: absolute;
-    content: '';
+.mail-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+}
+.mail-icon svg {
+    width: 24px;
+}
+
+.link-arrow {
     width: 20px;
-    height: 20px;
-    background-color: var(--toggle-circle);
-    border-radius: 50px;
-    left: var(--toggle-pos);
-    top: 2px;
-    z-index: 0;
-    transition: all 200ms ease-in;
+    display: block;
+    color: var(--white);
 }
-
-.icon-sun {
-    z-index: 1;
-}
-
-.icon-sun *, .icon-moon *{
-    fill: var(--svg-grey-fill);
-    stroke: var(--svg-grey-fill);
-}
-
- /*main*/
-
- #main {
-    text-align: center;
- }
 
 .intro {
-    font-size: 2.4rem;
+    font-size: clamp(1.85rem, 6vw, 4.25rem) ;
     font-weight: 200;
+    text-align: left;
     color: var(--text-clr);
     margin-block: 2.05rem;
     letter-spacing: 2px;
@@ -234,16 +261,11 @@ h1, h2, h3, p {
 } 
 
 .role-desc {
-    line-height: 1.5;
     font-size: 1.15rem;
+    line-height: 1.5;
+    text-align: left;
     color: var(--text-clr);
-    padding: 1.25rem;
-    border: 2px solid var(--dark-yellow);
-    max-width: 400px;
-    margin: 2.5rem auto;
-    border-left: 20px solid var(--dark-yellow);
 }
-
 .location {
     margin-bottom: 2rem;
     display: flex;
@@ -279,15 +301,6 @@ h1, h2, h3, p {
         transform: scale(2.5);
         opacity: 0;
     }
-}
-    
-.hire-me {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    color: var(--white);
-    background-color: var(--light-primary);
-    text-decoration: none;
-    margin-bottom: 3rem;
 }
 
 .stack {
@@ -396,16 +409,15 @@ h1, h2, h3, p {
 
  .project-list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
-    align-items: center;
+    gap: 2rem;
     margin-bottom: 2rem;
  }
 
  .project-item {
+    flex: 0 0 250px;
     border: 1px solid white;
-    max-width: 450px;
  }
 
  .project-title {
@@ -426,12 +438,6 @@ h1, h2, h3, p {
     line-height: 1.3;
     margin-bottom: 10px;
  }
- 
- .link-arrow {
-     width: 16px;
-     display: block;
-     color: var(--white);
-}
     
 .tag {
     display: flex;
@@ -626,18 +632,20 @@ h1, h2, h3, p {
     background-color: red;
 }
 
+.desktop-only {
+    display: none;
+}
+
 @media (min-width: 48em) {
     .wrapper {
         width: calc(100% - 6rem);
         max-width: 1000px;
         margin-inline: auto;
-        margin-bottom: 2.5rem;
+        margin-bottom: 4.5rem;
     }
 
-    .project-list {
-        flex-direction: row; 
-        align-items: start;
-        justify-content: space-between;
+    .desktop-only {
+        display: initial;
     }
 
     /*footer*/
