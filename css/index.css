@@ -1,115 +1,5 @@
-* {
-
-    --fluid-type-min: 1.8rem;
-    --fluid-type-max: 3rem;
-    --fluid-type-target: 5vw;
-
-    --toggle-bg-dark: rgb(6, 6, 30);
-    --toggle-bg-light: #c4bbbb;
-    --svg-fill-light: rgb(109, 107, 106);
-    --svg-fill-dark: var(--toggle-bg-light);
-    --toggle-circle-light: rgb(230, 138, 46);
-    --toggle-circle-dark: var(--primary-clr);
-    --transition: all 300ms ease-in-out;
-    --font-size-sm: 1rem;
-
-    --bolt-clr: #4364f760;
-    --grey: #C4C0D8;
-    --white: rgba(216, 213, 213, 0.733);
-
-    --dark-yellow: #e8e540;
-    --dark-primary: #617efe;
-    --dark-text2: #9592a7;
-    --dark-text1: #ccd6f6;
-    --dark-navy: #0d1225;
-
-    --light-yellow: #e3e030;
-    --light-primary: #4364f7;
-    --light-text2: #6d7ba9;
-    --light-text1: #233062;
-    --light-navy: #05011a;
-}
-:root {
-    color-scheme: light;
-    --primary-clr: var(--light-primary);
-    --secondary-clr: var(--light-yellow);
-    --background-clr: var(--white);
-    --scroll-bg-clr: var(--dark-navy);
-    --scroll-clr: var(--white);
-    --text-clr: var(--light-text1);
-    --highlight-text: var(--light-text2);
-    --icon-clr: var(--primary-clr);
-    --name: var(--light-primary);
-    --underline: var(--light-primary);
-    --border: var(--light-primary);
-
-    --svg-grey-fill: var(--svg-fill-light);
-    --toggle-bg: var(--toggle-bg-light);
-    --toggle-circle: var(--toggle-circle-light);
-    --toggle-pos: calc(100% - 22px);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root{
-        color-scheme: dark;
-        --primary-clr: var(--dark-primary);
-        --background-clr: var(--dark-navy);
-        --text-clr: var(--dark-text1);
-        --highlight-text: var(--dark-text2);
-        --scroll-bg-clr: var(--white);
-        --scroll-clr: var(--background-clr);
-        --icon-clr: var(--dark-text1);
-        --name: var(--light-primary);
-        --underline: var(--dark-yellow);
-        --border: var(--light-yellow);
-
-        --svg-grey-fill: var(--svg-fill-dark);
-        --toggle-bg: var(--toggle-bg-dark);--toggle-bg: var(--toggle-bg-dark);
-        --toggle-circle: var(--toggle-circle-dark);
-        --toggle-pos: 2px;
-    }
-}
-
-[color-scheme="light"]{
-    color-scheme: light;
-    --primary-clr: var(--light-primary);
-    --background-clr: var(--white);
-    --text-clr: var(--light-text1);
-    --highlight-text: var(--light-text2);
-    --scroll-clr: var(--white);
-    --scroll-bg-clr: var(--dark-navy);
-    --icon-clr: var(--primary-clr);
-    --name: var(--light-primary);
-    --underline: var(--light-primary);
-    --border: var(--light-primary);
-    --svg-grey-fill: var(--svg-fill-light);
-    --toggle-bg: var(--toggle-bg-light);
-    --toggle-circle: var(--toggle-circle-light);
-    --svg-grey-fill: rgb(134, 129, 124);
-    --toggle-bg: var(--toggle-bg-light);
-    --toggle-circle: var(--toggle-circle-light);
-    --toggle-pos: calc(100% - 22px);
-}
-
-[color-scheme="dark"]{
-    color-scheme: dark;
-    --primary-clr: var(--dark-primary);
-    --background-clr: var(--dark-navy);
-    --text-clr: var(--dark-text1);
-    --highlight-text: var(--dark-text2);
-    --name: var(--light-primary);
-    --icon-clr: var(--dark-text1);
-    --scroll-bg-clr: var(--white);
-    --scroll-clr: var(--background-clr);
-    --underline: var(--dark-yellow);
-    --border: var(--light-yellow);
-    --svg-grey-fill: var(--svg-fill-dark);
-    --toggle-bg: var(--toggle-bg-dark);--toggle-bg: var(--toggle-bg-dark);
-    --toggle-circle: var(--toggle-circle-dark);
-    --svg-grey-fill: rgb(134, 129, 124);
-    --toggle-bg: var(--toggle-bg-dark);
-    --toggle-circle: var(--toggle-circle-dark);
-    --toggle-pos: 2px;
+:root{
+   
 }
 
 html {
@@ -326,7 +216,6 @@ h1, h2, h3, p {
     /* width: fit-content; */
     font-size: 1.5rem;
     line-height: 1.4;
-    color: var(--primary-clr);
     position: relative;
     margin-bottom: 0.5rem;
     border: 2px solid ;
@@ -367,6 +256,9 @@ h1, h2, h3, p {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
     border-style: solid;
+}
+.box-vue {
+    border-color: #0ACF83;
 }
 
 .about {
@@ -590,7 +482,7 @@ h1, h2, h3, p {
 
 .sm-icon svg {
     fill: none;
-    stroke: var(--text-clr);
+    stroke: blue;
     transition: 200ms ease-in-out;
  }
 
