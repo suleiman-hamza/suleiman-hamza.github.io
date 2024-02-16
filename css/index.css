@@ -41,14 +41,13 @@ h1, h2, h3, p {
 .txt-underline {
     text-decoration-line: underline;
     text-decoration-color: var(--main-brand-clr);
-    text-underline-offset: 4px;
+    text-underline-offset: 2px;
     text-decoration-thickness: 2px;
-    transition: var(--transition);
+    transition: all 200ms ease-in;
 }
-/* 
-.txt-underline:active {
-    background-color: ;
-} */
+.txt-underline:hover {
+    text-underline-offset: 4px;
+}
 
 .heading-lvl-2 {
     font-size: 1.25rem;
@@ -190,32 +189,26 @@ h1, h2, h3, p {
     border-image-slice: 1;
     border-image-source:linear-gradient(to right, #e34f26, rgb(247, 163, 114));
 }
-
 .box-css {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #264de4, #2965f1);
 }
-
 .box-sass {
     border-image-slice: 1;
     border-image-source:linear-gradient(to right, rgb(228, 111, 169), rgb(247, 176, 176));
 }
-
 .box-js {
     border-image-slice: 1;
     border-image-source:linear-gradient(to right, #f7df1e, #fff);
 }
-
 .box-git {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #f1502f, #3e2c00);
 }
-
 .box-github {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #000000, #0a0909);
 }
-
 .box-figma {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
@@ -319,12 +312,6 @@ h1, h2, h3, p {
     margin-block: 1.25rem;
 }
 
-.emoji {
-    width: 20px;
-    display: inline-block;
-    stroke: var(--primary-clr);
-}
-
 .reach-out {
     margin-bottom: 2.5rem;
     /* font-size: var(--font-size-sm); */
@@ -348,13 +335,13 @@ h1, h2, h3, p {
  }
 
  .lets-talk {
+    color: #000000;
     text-decoration: none;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     display: inline-block;
-    border: 2px solid brown;
-    border-radius: 10px;
-    transition: var(--transition);
+    border-radius: 5px;
+    background-color: #0ACF83;
  }
 
  /*footer styles*/
