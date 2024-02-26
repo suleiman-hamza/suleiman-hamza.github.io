@@ -41,6 +41,19 @@ h1, h2, h3, p {
     margin-inline: auto;
     margin-bottom: 6.5rem;
 }
+/*animate instesection observer*/
+.target, .proper, .player, .touch {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all 700ms ease-in-out;
+    transition-delay: 0.23s;
+}
+section.animate {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
 .txt-underline {
     text-decoration-line: underline;
