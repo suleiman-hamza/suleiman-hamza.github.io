@@ -70,6 +70,7 @@ section.animate {
     font-size: 1.25rem;
     margin-bottom: 1.6rem;
     color: var(--light-grey);
+    
 }
 
 .hero-section {
@@ -234,6 +235,15 @@ section.animate {
 .box-vue {
     border-color: #0ACF83;
 }
+.box-vite {
+    border-color: #3800a1;
+}
+.box-graphql {
+    border-color: magenta;
+}
+.box-gemini {
+    border-color: #A259FF;
+}
 
 .about {
     text-align: center;
@@ -328,6 +338,27 @@ section.animate {
     gap: 0.3rem;
     line-height: 1.3;
     margin-bottom: 10px;
+    color: #0ACF83;
+ }
+ .tags {
+    display: flex;
+    gap: 0.2rem;
+    font-size: 0.85rem;
+    /* background-color: #22242e; */
+    padding: 0.2rem;
+    margin: 0.5rem;
+    display: inline-block;border-radius: 10px;
+ }
+ .tags > span {
+    font-size: 0.85rem;
+    background-color: #22242e;
+    padding: 0.2rem;
+    display: inline-block;border-radius: 10px;
+ }
+
+
+ .link-to-github {
+    color: #0ACF83;
  }
     
 .tag {
