@@ -165,7 +165,7 @@ section.animate {
 } 
 
 .role-desc {
-    font-size: 1.15rem;
+    font-size: clamp(1.25rem, 6vw, 3.75rem);
     line-height: 1.5;
     text-align: left;
     color: var(--text-clr);
@@ -211,10 +211,6 @@ section.animate {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #264de4, #2965f1);
 }
-.box-sass {
-    border-image-slice: 1;
-    border-image-source:linear-gradient(to right, rgb(228, 111, 169), rgb(247, 176, 176));
-}
 .box-js {
     border-image-slice: 1;
     border-image-source:linear-gradient(to right, #f7df1e, #fff);
@@ -227,19 +223,11 @@ section.animate {
     border-image-slice: 1;
     border-image-source: linear-gradient(to right, #000000, #0a0909);
 }
-.box-figma {
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to right, #F24E1E, #FF7262, #A259FF, #1ABCFE, #0ACF83);
-    border-style: solid;
-}
 .box-vue {
     border-color: #0ACF83;
 }
 .box-vite {
     border-color: #3800a1;
-}
-.box-graphql {
-    border-color: magenta;
 }
 .box-gemini {
     border-color: #A259FF;
@@ -247,6 +235,7 @@ section.animate {
 
 .about {
     text-align: center;
+    margin-bottom: 6rem;
 }
 
 .about-me{
@@ -270,14 +259,23 @@ section.animate {
     border: 2px solid  #0ACF83;
     border-top-style: none;
     border-bottom-style: none;
- }
+    filter: grayscale(100%);
+    transform: scale(1);
+    transition:  filter, transform 1000ms;
+    cursor: cell;
+}
 
- .about-btn {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
- }
+.about-img:is(:hover, :focus) {
+    transform: scale(0.95);
+    filter: grayscale(0%);
+    transition:  filter, transform 1000ms;
+
+}
+
+.about-me-right-chevron {
+    width: 18px;
+    transform: rotate(260deg);
+}
 
 .btn-flex {
     display: inline-flex;
@@ -286,6 +284,7 @@ section.animate {
     padding: 0.5rem;
     text-decoration: none;
     background-color: #0ACF83;
+    margin-block: 2rem;
 }
 
 .upwork, .download {
@@ -301,7 +300,9 @@ section.animate {
  .project {
     text-align: center;
  }
- .project-desc {
+
+ .project-body {
+    border:1px solid #22242e;
     padding: 1rem;
  }
  .project-desc-title {
