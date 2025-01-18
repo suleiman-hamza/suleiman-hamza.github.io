@@ -297,13 +297,25 @@ section.animate {
     font-weight: 500;
 }
 
- .project {
-    text-align: center;
- }
-
  .project-body {
     border:1px solid #22242e;
-    padding: 1rem;
+    padding: 2rem;
+    .project-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        a {
+            border: 1px solid grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    & h4 {
+        margin: 0;
+    }
  }
  .project-desc-title {
     margin: 1rem;
@@ -318,8 +330,8 @@ section.animate {
  }
 
  .project-item {
+    display: block;
     flex: 0 0 250px;
-    border: 1px solid white;
  }
 
  .project-title {
