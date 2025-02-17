@@ -98,14 +98,7 @@ section.animate {
 
 .name {
     color: var(--main-brand-clr);
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-}
-
-.role, .location {
-    font-size: 1.2rem;
-    color: #ffffff80;
-    margin-bottom: 0.25rem;
+    /* margin-bottom: 0.2rem; */
 }
 
 .buttons {
@@ -156,7 +149,7 @@ section.animate {
 }
 
 .role-desc {
-    font-size: clamp(1.25rem, 4vw, 3.25rem);
+    font-size: clamp(1.25rem, 4vw, 2.25rem);
     line-height: 1.5;
     text-align: left;
     color: var(--text-clr);
@@ -173,6 +166,8 @@ section.animate {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    max-width: 650px;
+    margin-inline: auto;
 }
 
 .stack p {
@@ -233,6 +228,7 @@ section.animate {
     line-height: 1.5;
     text-align: justify;
     margin-top: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .about-img-container {
@@ -278,10 +274,6 @@ section.animate {
     margin-block: 2rem;
 }
 
-.upwork, .download {
-    stroke: #0a0909;
-    width: 20px;
-}
 .btn-flex span {
     text-decoration: none;
     color: black;
@@ -372,8 +364,9 @@ section.animate {
 }
 
 .reach-out p {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
+    line-height: 1.3;
  }
 
  .grid-social {
@@ -381,7 +374,6 @@ section.animate {
     gap: 1rem;
     justify-content: center;
     padding: 1rem;
-    border: 1px solid var(--main-brand-clr);
  }
 
  /*footer styles*/
@@ -398,6 +390,9 @@ section.animate {
  }
  .other-links {
     display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    align-items: center;
     gap: 1rem;
  }
  .other-links a {
@@ -465,34 +460,17 @@ section.animate {
         display: initial;
         color: #fcfdfd;
     }
-
-    /*footer*/
-    .footer-bdy {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .logo-type {
-        text-align: left;
-        width: fit-content;
-        margin: 0;
-    }
-
     .other-links {
-        gap: 2rem;
+        flex-direction: row;
     }
     .other-links a:is(:active, :hover) {
         text-underline-offset: 4px;
     }
 
-    .grid-social {
-        grid-column: 2 / 3;
-        justify-content: flex-end;
-    }
-
-    .copyright {
+    /* .copyright {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         text-align: left;
     }
+} */
 }
