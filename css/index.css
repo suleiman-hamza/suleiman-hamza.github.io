@@ -226,7 +226,7 @@ section.animate {
 
 .about-me{
     line-height: 1.5;
-    text-align: justify;
+    /* text-align: justify; */
     margin-top: 2.5rem;
     margin-bottom: 2rem;
 }
@@ -278,6 +278,13 @@ section.animate {
     text-decoration: none;
     color: black;
     font-weight: 500;
+}
+
+.xp-flex {
+    display: flex;
+    overflow: visible;
+    justify-content: space-between;
+    font-size: 1rem;
 }
 
 .project > h3 {
