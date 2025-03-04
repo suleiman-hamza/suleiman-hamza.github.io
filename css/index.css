@@ -224,11 +224,16 @@ section.animate {
     margin-bottom: 6rem;
 }
 
-.about-me{
+.about-me, .experience{
     line-height: 1.5;
     text-align: justify;
-    margin-top: 2.5rem;
     margin-bottom: 2rem;
+
+    > h3 {
+        color: var(--light-grey);
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+    }
 }
 
 .about-img-container {
@@ -280,11 +285,27 @@ section.animate {
     font-weight: 500;
 }
 
+.experience {
+    margin-bottom: 2rem;
+}
+
+#Skills {
+    margin-bottom: 2rem;
+}
+
+.xp-group {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
 .xp-flex {
     display: flex;
     overflow: visible;
     justify-content: space-between;
     font-size: 1rem;
+    border: 1px solid grey;
+    padding: 1rem;
 }
 
 .project > h3 {
